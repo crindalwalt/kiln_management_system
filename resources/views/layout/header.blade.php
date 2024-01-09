@@ -59,7 +59,7 @@
         <div class="dropdown-menu p-0" aria-labelledby="messageDropdown">
           <div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
             <p>9 New Messages</p>
-            <a href="javascript:;" class="text-muted">Clear all</a>
+            <a href="https://www.nobleui.com/laravel/template/demo1/" class="text-muted">Clear all</a>
           </div>
           <div class="p-1">
             <a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">

@@ -21,21 +21,19 @@
       <li class="nav-item nav-category">Actions</li>
       <li class="nav-item {{ active_class(['email/*']) }}">
         <a class="nav-link" data-bs-toggle="collapse" href="#email" role="button" aria-expanded="{{ is_active_route(['email/*']) }}" aria-controls="email">
-          <i class="link-icon" data-feather="mail"></i>
+          <i class="link-icon" data-feather="users"></i>
           <span class="link-title">StakeHolders</span>
           <i class="link-arrow" data-feather="chevron-down"></i>
         </a>
         <div class="collapse {{ show_class(['email/*']) }}" id="email">
           <ul class="nav sub-menu">
             <li class="nav-item">
-              <a href="{{ route("stakeholder.all") }}" class="nav-link {{ active_class(['stakeholder/']) }}">All</a>
+              <a href="{{ route("stakeholder.all") }}" class="nav-link {{ active_class(['stakeholder/']) }}">All Stakeholders</a>
             </li>
             <li class="nav-item">
-              <a href="{{ url('/email/read') }}" class="nav-link {{ active_class(['email/read']) }}">Read</a>
+              <a href="{{ route("stakeholder.add") }}" class="nav-link {{ active_class(['stakeholder/*']) }}">Add Stakeholder</a>
             </li>
-            <li class="nav-item">
-              <a href="{{ url('/email/compose') }}" class="nav-link {{ active_class(['email/compose']) }}">Compose</a>
-            </li>
+
           </ul>
         </div>
       </li>

@@ -12,7 +12,7 @@ class UserGroup extends Model
     protected $guarded = [];
 
 
-    public function stakeholder()
+    public function stakeholders()
     {
         return $this->hasMany(Stakeholder::class);
     }

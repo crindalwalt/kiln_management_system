@@ -5,7 +5,7 @@
 @endpush
 
 @section('content')
-    <x-utils.page-heading heading="ALL MEMBERS DATA">
+    <x-utils.page-heading :heading="'ALL '.strtoupper($usergroup->name). ' DATA'">
         <button type="button" class="btn btn-secondary btn-icon-text mb-2 mb-md-0">
             <i class="btn-icon-prepend" data-feather="download-cloud"></i>
             Download Report

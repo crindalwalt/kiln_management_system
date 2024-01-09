@@ -21,6 +21,7 @@ class StakeholderFactory extends Factory
             'last_name' => $this->faker->firstNameMale(),
             'CNIC' => "31202100010000",
             'opening_balance' => 0,
+            'phone' => $this->faker->phoneNumber,
             'balance' => $this->faker->numberBetween(10000, 10000000),
             'status' => "active",
             'city' => $this->faker->city(),

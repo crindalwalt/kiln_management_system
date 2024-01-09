@@ -26,6 +26,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::middleware(["auth", "verified"])->group(function () {
     Route::get("/stakeholders", [StakeholderController::class, 'index'])->name("stakeholder.all");
+    Route::get("/stakeholders/add", [StakeholderController::class, 'create'])->name("stakeholder.add");
+    Route::post("/stakeholders/add", [StakeholderController::class, 'store'])->name("stakeholder.add");
+    Route::get("/stakeholders/{usergroup:name}", [StakeholderController::class, 'type'])->name("stakeholder.type");
 
 });
 Route::middleware('auth')->group(function () {

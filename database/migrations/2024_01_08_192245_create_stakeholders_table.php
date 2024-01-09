@@ -16,6 +16,7 @@ return new class extends Migration
             $table->text("first_name");
             $table->text("last_name")->nullable();
             $table->longText("CNIC")->nullable();
+            $table->string("phone");
             $table->integer("opening_balance")->default(0);
             $table->integer("balance");
             $table->enum("status",["active","inactive"]);

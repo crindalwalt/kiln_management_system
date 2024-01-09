@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreStakeholderRequest;
 use App\Http\Requests\UpdateStakeholderRequest;
 use App\Models\Stakeholder;
+use App\Models\UserGroup;
 
 class StakeholderController extends Controller
 {
@@ -15,7 +16,19 @@ class StakeholderController extends Controller
     {
 
         $data['stakeholders'] = Stakeholder::latest()->get();
+        $data['total_stakeholder'] = count($data['stakeholders']);
+        $data['total_pending'] = $data['stakeholders']->sum("balance");
         return view("pages.stakeholder.all_stakeholder")->with($data);
+    }
+
+    public function type (UserGroup $usergroup)
+    {
+//        dd($usergroup->stakeholders);
+        $data['stakeholders'] = $usergroup->stakeholders;
+        $data['usergroup'] = $usergroup;
+        $data['total_stakeholder'] = count($data['stakeholders']);
+        $data['total_pending'] = $data['stakeholders']->sum("balance");
+        return view("pages.stakeholder.filter_stakeholder")->with($data);
     }
 
     /**
@@ -23,7 +36,9 @@ class StakeholderController extends Controller
      */
     public function create()
     {
-        //
+//        dd("new page");
+        $data['member_types'] = UserGroup::all();
+        return view("pages.stakeholder.add_stakeholder")->with($data);
     }
 
     /**
@@ -31,7 +46,20 @@ class StakeholderController extends Controller
      */
     public function store(StoreStakeholderRequest $request)
     {
-        //
+//        dd($request->all());
+        Stakeholder::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'CNIC' => $request->cnic,
+            'phone' => $request->phone,
+            'city' => $request->city,
+            'user_group_id' => $request->member_type,
+            'opening_balance' => 0,
+            'balance' => 0,
+        ]);
+
+        return "add ho gya";
+
     }
 
     /**

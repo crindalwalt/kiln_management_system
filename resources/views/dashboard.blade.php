@@ -10,12 +10,13 @@
             <i class="btn-icon-prepend" data-feather="download-cloud"></i>
             Download Report
         </button>
+
     </x-utils.page-heading>
-    <x-utils.hightlight-card-row>
-        <x-utils.hightlight-card></x-utils.hightlight-card>
-        <x-utils.hightlight-card></x-utils.hightlight-card>
-        <x-utils.hightlight-card></x-utils.hightlight-card>
-    </x-utils.hightlight-card-row>
+{{--    <x-utils.hightlight-card-row>--}}
+{{--        <x-utils.hightlight-card></x-utils.hightlight-card>--}}
+{{--        <x-utils.hightlight-card></x-utils.hightlight-card>--}}
+{{--        <x-utils.hightlight-card></x-utils.hightlight-card>--}}
+{{--    </x-utils.hightlight-card-row>--}}
     <!-- row -->
 
     <div class="row">
