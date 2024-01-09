@@ -25,7 +25,7 @@ class StoreStakeholderRequest extends FormRequest
             'first_name' => ['required'],
             'last_name' => ['required'],
             'member_type' => ['required'],
-            'phone' => ['required'],
+            'phone' => ['required', "min:11","max:12"],
             'city' => ['required'],
         ];
     }

@@ -30,10 +30,12 @@
                             <div class="col">
                                 <label class="form-label">First Name</label>
                                 <input class="form-control mb-4 mb-md-0" name="first_name" placeholder="Enter First Name"/>
+                                @error("first_name") <div class="badge rounded-pill bg-danger mt-2">{{ $message }}</div> @enderror
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">Last Name</label>
                                 <input class="form-control" name="last_name" placeholder="Enter Last Name" />
+                                @error("last_name") <div class="badge rounded-pill bg-danger mt-2">{{ $message }}</div> @enderror
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -47,20 +49,25 @@
                                         @endforeach
 
                                     </select>
-                                </div></div>
+                                </div>
+                                @error("member_type") <div class="badge rounded-pill bg-danger mt-2">{{ $message }}</div> @enderror
+                            </div>
                             <div class="col-md-6">
                                 <label class="form-label">CNIC</label>
                                 <input class="form-control" type="text" data-inputmask-alias="*****-*******-*" name="cnic" />
+                                @error("cnic") <div class="badge rounded-pill bg-danger mt-2">{{ $message }}</div> @enderror
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label class="form-label">Phone:</label>
                                 <input class="form-control mb-4 mb-md-0" type="tel" name="phone" placeholder="03090000000"/>
+                                @error("phone") <div class="badge rounded-pill bg-danger mt-2">{{ $message }}</div> @enderror
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">City</label>
                                 <input class="form-control" type="text" name="city" placeholder="Lahore"/>
+                                @error("city") <div class="badge rounded-pill bg-danger mt-2">{{ $message }}</div> @enderror
                             </div>
                         </div>
                         <div class="row mb-3">

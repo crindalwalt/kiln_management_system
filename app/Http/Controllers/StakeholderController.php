@@ -6,6 +6,7 @@ use App\Http\Requests\StoreStakeholderRequest;
 use App\Http\Requests\UpdateStakeholderRequest;
 use App\Models\Stakeholder;
 use App\Models\UserGroup;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class StakeholderController extends Controller
 {
@@ -57,8 +58,8 @@ class StakeholderController extends Controller
             'opening_balance' => 0,
             'balance' => 0,
         ]);
-
-        return "add ho gya";
+        Alert::success("success","New Stakeholder added successfully ");
+        return redirect()->route("stakeholder.all");
 
     }
 
