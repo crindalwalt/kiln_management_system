@@ -23,7 +23,7 @@
                     d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
             </svg>
         </x-utils.hightlight-card>
-        <x-utils.hightlight-card title_text="Total Pending Amount" :main_value="$total_pending"
+        <x-utils.hightlight-card title_text="Total Pending Amount" :main_value="'PKR '.$total_pending"
                                  style="color:saddlebrown">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-coin"
                  viewBox="0 0 16 16">
@@ -82,7 +82,17 @@
                                         <td>{{ $item->opening_balance }}</td>
                                         <td>{{ $item->balance }}</td>
                                         <td>{{ $item->city }}</td>
-                                        <td>$320,800</td>
+                                        <td>
+                                            <button type="button" class="btn btn-warning btn-icon">
+                                                <i data-feather="eye"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-info btn-icon">
+                                                <i data-feather="edit"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-icon">
+                                                <i data-feather="delete"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                 @endforeach
 

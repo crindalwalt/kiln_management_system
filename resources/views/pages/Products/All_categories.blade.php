@@ -5,34 +5,34 @@
 @endpush
 
 @section('content')
-    <x-utils.page-heading heading="ALL MEMBERS DATA">
+    <x-utils.page-heading heading="ALL PRODUCT CATEGORIES DATA">
         <button type="button" class="btn btn-secondary btn-icon-text mb-2 mb-md-0">
             <i class="btn-icon-prepend" data-feather="download-cloud"></i>
-            Download Report
+            Add Products
         </button>
-        <a  href="{{ route("stakeholder.add") }}" type="button" class="btn btn-primary btn-icon-text mb-2 mb-md-0 mx-2">
+        <a  href="{{ route("products.all") }}" type="button" class="btn btn-primary btn-icon-text mb-2 mb-md-0 mx-2">
             <i class="btn-icon-prepend" data-feather="plus-circle"></i>
-            Add Member
+            All Products
         </a>
     </x-utils.page-heading>
     <x-utils.hightlight-card-row>
-        <x-utils.hightlight-card title_text="Total Members" :main_value="$total_stakeholder">
+        <x-utils.hightlight-card title_text="Total categories" :main_value="$total_categories">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                  class="bi bi-bar-chart-fill" viewBox="0 0 16 16" style="color:saddlebrown">
                 <path
                     d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
             </svg>
         </x-utils.hightlight-card>
-        <x-utils.hightlight-card title_text="Total Pending Amount" :main_value="'PKR'. $total_pending"
-                                 style="color:saddlebrown">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-coin"
-                 viewBox="0 0 16 16">
-                <path
-                    d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z"/>
-                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/>
-            </svg>
-        </x-utils.hightlight-card>
+{{--        <x-utils.hightlight-card title_text="Total Products Value" :main_value="30000"--}}
+{{--                                 style="color:saddlebrown">--}}
+{{--            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-coin"--}}
+{{--                 viewBox="0 0 16 16">--}}
+{{--                <path--}}
+{{--                    d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z"/>--}}
+{{--                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>--}}
+{{--                <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/>--}}
+{{--            </svg>--}}
+{{--        </x-utils.hightlight-card>--}}
         {{--        <x-utils.hightlight-card></x-utils.hightlight-card>--}}
         {{--        <x-utils.hightlight-card></x-utils.hightlight-card>--}}
     </x-utils.hightlight-card-row>
@@ -44,44 +44,23 @@
                     <h6 class="card-title">All Members</h6>
                     <p class="text-muted mb-3">Here is the list of all the StakeHolders in the company.</p>
                     <div class="table-responsive">
-                        @if($stakeholders)
+                        @if($categories)
                             <table id="dataTableExample" class="table">
                                 <thead>
                                 <tr>
                                     <th>Id</th>
                                     <th>Name</th>
-                                    <th>Group</th>
-                                    <th>CNIC</th>
-                                    <th>O.B</th>
-                                    <th>Balance</th>
-                                    <th>City</th>
+
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($stakeholders as $item)
+                                @foreach($categories as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->first_name . " " . $item->last_name }}</td>
+                                        <td>{{ $item->name }}</td>
 
-                                        <td>
-                                            <a href="{{ route("stakeholder.type",$item->group->name) }}">
-                                        <span class="badge rounded-pill
-                                            @if($item->group->id == 1)bg-warning
-                                            @elseif($item->group->id ==2) bg-danger
-                                            @elseif($item->group->id ==3) bg-info
-                                            @elseif($item->group->id ==4) bg-dark
-                                            @elseif($item->group->id ==5) bg-secondary
-                                            @else bg-secondary
-                                            @endif">
-                                            {{$item->group->name}}
-                                        </span>
-                                            </a>
-                                        </td>
-                                        <td>{{ $item->CNIC }}</td>
-                                        <td>{{ $item->opening_balance }}</td>
-                                        <td>{{ $item->balance }}</td>
-                                        <td>{{ $item->city }}</td>
+
                                         <td>
                                             <button type="button" class="btn btn-warning btn-icon">
                                                 <i data-feather="eye"></i>
@@ -94,6 +73,7 @@
                                             </button>
                                         </td>
                                     </tr>
+
                                 @endforeach
 
                                 </tbody>

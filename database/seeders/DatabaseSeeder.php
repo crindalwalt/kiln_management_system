@@ -23,6 +23,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             StakeholderSeeder::class,
             UserGroupSeeder::class,
+            ProductCategorySeeder::class,
+            ProductSeeder::class,
+            ProductBatchSeeder::class
         ]);
     }
 }

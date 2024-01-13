@@ -8,7 +8,7 @@
             </div>
             <div class="row">
                 <div class="col-8 col-md-8 col-xl-8">
-                    <h3 class="mb-2">PKR {{$main_value}}</h3>
+                    <h3 class="mb-2" >{{$main_value}}</h3>
                     <div class="d-flex align-items-baseline">
                         <p class="text-success">
                             <span><i data-feather="info" class="icon-sm mb-1"></i> Based on Data</span>
